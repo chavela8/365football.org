@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Soccer News - Ваш источник футбольных новостей, матчей, прогнозов и статистики.">
+  <meta name="keywords" content="футбол, новости, матчи, прогнозы, статистика, Soccer News">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0056b3">
+  <link rel="canonical" href="https://yourdomain.com/">
+  <link rel="manifest" href="manifest.json">
+  <title>Soccer News - Ваш Футбольный Портал</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header sticky-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center py-2">
+        <div class="logo">
+          <a href="/"><img src="assets/img/logo.png" alt="Soccer News логотип" loading="lazy" /></a>
+        </div>
+        <div class="d-flex align-items-center">
+          <div class="language-select me-3">
+            <a href="?lang=ru">Русский</a> |
+            <a href="?lang=en">English</a> |
+            <a href="?lang=es">Español</a>
+          </div>
+          <div class="theme-toggle me-3">
+            <button id="toggleDarkMode" class="btn btn-secondary">Тёмная тема</button>
+          </div>
+          <form class="d-flex" role="search" action="/search">
+            <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search" name="q">
+            <button class="btn btn-outline-success" type="submit">Найти</button>
+          </form>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                  aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="/chat">Чат</a></li>
+              <li class="nav-item"><a class="nav-link" href="/live">Live</a></li>
+              <li class="nav-item"><a class="nav-link" href="/news">Новости</a></li>
+              <li class="nav-item"><a class="nav-link" href="/previews">Превью</a></li>
+              <li class="nav-item"><a class="nav-link" href="/matches">Матчи</a></li>
+              <li class="nav-item"><a class="nav-link" href="/competitions">Соревнования</a></li>
+              <li class="nav-item"><a class="nav-link" href="/videos">Видео</a></li>
+              <li class="nav-item"><a class="nav-link" href="/transfers">Трансферы</a></li>
+            </ul>
+            <div class="auth">
+              <a href="/login" class="btn btn-outline-primary">Войти</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="site-content container my-4">
+    <!-- Live match ticker -->
+    <section class="match-ticker mb-4">
+      <div class="ticker-wrapper bg-dark text-white p-2 rounded">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <span class="ticker-title"><i class="fa fa-clock"></i> 15:16 06.02</span>
+          <span class="ticker-info">Фиорентина ― Интер: превью</span>
+          <span class="ticker-info">Ливерпуль – Тоттенхэм: превью</span>
+          <span class="ticker-info">Реал Сосьедад ― Осасуна: превью</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Матч дня с обратным отсчетом -->
+    <section class="match-of-day my-4">
+      <h2>Матч дня</h2>
+      <div class="card">
+        <img src="assets/img/match-of-day.jpg" class="card-img-top" alt="Матч дня: Барселона vs Реал Мадрид" loading="lazy">
+        <div class="card-body">
+          <h5 class="card-title">Финал Лиги Чемпионов: Барселона vs Реал Мадрид</h5>
+          <p class="card-text">Начало матча через <span id="match-countdown">Loading...</span></p>
+          <a href="/match-of-day" class="btn btn-primary">Подробнее</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Турнирная таблица -->
+    <section class="league-standings my-4">
+      <h2>Турнирная таблица</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Команда</th>
+              <th>И</th>
+              <th>В</th>
+              <th>Н</th>
+              <th>П</th>
+              <th>О</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Барселона</td>
+              <td>25</td>
+              <td>18</td>
+              <td>4</td>
+              <td>3</td>
+              <td>58</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Реал Мадрид</td>
+              <td>25</td>
+              <td>17</td>
+              <td>5</td>
+              <td>3</td>
+              <td>56</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Манчестер Сити</td>
+              <td>25</td>
+              <td>16</td>
+              <td>6</td>
+              <td>3</td>
+              <td>54</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Последние результаты -->
+    <section class="latest-results my-4">
+      <h2>Последние результаты</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="result-card card">
+            <div class="card-body">
+              <h5 class="card-title">Барселона 2-1 Реал Мадрид</h5>
+              <p class="card-text">18.03.2023 - Ла Лига</p>
+              <a href="/match/1" class="btn btn-secondary">Подробнее</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="result-card card">
+            <div class="card-body">
+              <h5 class="card-title">Манчестер Сити 3-0 Ливерпуль</h5>
+              <p class="card-text">17.03.2023 - Премьер-лига</p>
+              <a href="/match/2" class="btn btn-secondary">Подробнее</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="result-card card">
+            <div class="card-body">
+              <h5 class="card-title">Бавария 1-1 Боруссия</h5>
+              <p class="card-text">16.03.2023 - Бундеслига</p>
+              <a href="/match/3" class="btn btn-secondary">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Раздел статистики с интерактивным графиком -->
+    <section class="statistics my-4">
+      <h2>Статистика матчей</h2>
+      <canvas id="statsChart" width="400" height="200"></canvas>
+    </section>
+
+    <!-- Контейнер для отображения данных из Supabase -->
+    <div id="footballDataContainer"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <p>&copy; 2025 Soccer News. Все права защищены.</p>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-unstyled">
+            <li><a href="/about" class="text-white">О нас</a></li>
+            <li><a href="/privacy" class="text-white">Политика конфиденциальности</a></li>
+            <li><a href="/terms" class="text-white">Правила</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="social-links">
+            <a href="https://facebook.com" class="text-white me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" class="text-white me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" class="text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+          <p>Служба поддержки</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <a href="#" id="scrollToTop" class="btn btn-primary scroll-to-top"><i class="fa fa-arrow-up"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Schema.org для организации -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Soccer News",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/assets/img/logo.png",
+    "sameAs": [
+      "https://facebook.com",
+      "https://twitter.com",
+      "https://instagram.com"
+    ]
+  }
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){ (m[i].a=m[i].a||[]).push(arguments) };
+        m[i].l=1*new Date();
+        k=e.createElement(t), a=e.getElementsByTagName(t)[0];
+        k.async=1; k.src=r; a.parentNode.insertBefore(k,a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(12345678, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+  </script>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/12345678" style="position:absolute; left:-9999px;" alt="" />
+    </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+</body>
+</html>

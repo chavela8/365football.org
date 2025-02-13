@@ -1,0 +1,33 @@
+name: Auto Backup
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Запускается каждый день в 00:00 (UTC)
+  workflow_dispatch:    # Возможность ручного запуска
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Git configuration
+        run: |
+          git config user.name "Auto Backup Bot"
+          git config user.email "backup@example.com"
+
+      - name: Commit changes (if any)
+        run: |
+          git add .
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "Auto backup commit: $(date)"
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Push changes
+        run: git push origin HEAD 

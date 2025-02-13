@@ -1,0 +1,151 @@
+/* Основные стили */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #333;
+  margin-right: 10px;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #0056b3;
+}
+
+.language-select a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.language-select a:hover {
+  text-decoration: underline;
+}
+
+.match-ticker {
+  font-size: 0.9rem;
+}
+
+.match-ticker .ticker-wrapper {
+  background-color: #343a40;
+}
+
+.match-ticker .ticker-title {
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.video-card .embed-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-card .embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.site-footer {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .site-header .d-flex {
+    flex-direction: column;
+  }
+}
+
+/* Дополнительные стили для новых футбольно-ориентированных секций */
+
+.match-of-day .card-img-top {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.match-of-day .card {
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.league-standings table {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.league-standings th,
+.league-standings td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.latest-results .result-card {
+  transition: transform 0.3s;
+}
+
+.latest-results .result-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Стили для тёмного режима */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .site-footer,
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+
+/* Scroll To Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  background-color: #0056b3;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover {
+  background-color: #004494;
+} 
