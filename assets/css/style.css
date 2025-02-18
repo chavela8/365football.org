@@ -1,3 +1,60 @@
+/* Сброс базовых стилей */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Базовые стили для проекта */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Стили для основных компонентов */
+.site-header,
+.site-footer {
+  padding: 1rem;
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Дополнительные стили для контента */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Стили для тёмной темы */
+.dark-theme {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-theme .site-header,
+.dark-theme .site-footer {
+  background-color: #1e1e1e;
+}
+
+/* Responsive дизайн */
+/* Пример медиазапроса для устройств с шириной экрана до 768px */
+@media (max-width: 768px) {
+  .site-header,
+  .site-footer {
+    text-align: center;
+  }
+  
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Основные стили */
 body {
   font-family: 'Arial', sans-serif;
@@ -69,12 +126,6 @@ body {
   font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  .site-header .d-flex {
-    flex-direction: column;
-  }
-}
-
 /* Дополнительные стили для новых футбольно-ориентированных секций */
 
 .match-of-day .card-img-top {
@@ -107,23 +158,6 @@ body {
 
 .latest-results .result-card:hover {
   transform: translateY(-5px);
-}
-
-/* Стили для тёмного режима */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode .site-header,
-body.dark-mode .site-footer,
-body.dark-mode .card {
-  background-color: #1e1e1e;
-  border-color: #333;
-}
-
-body.dark-mode a {
-  color: #bb86fc;
 }
 
 /* Scroll To Top Button */

@@ -75,6 +75,49 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>
         `).join('');
     }
+
+    // Переключатель тёмной темы
+    const toggleDarkModeBtn = document.getElementById('toggleDarkMode');
+    toggleDarkModeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        const isDark = document.body.classList.contains('dark-theme');
+        localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+    });
+    
+    // Применяем сохранённое состояние темы
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-theme');
+    }
+
+    // Обратный отсчёт для "Матча дня"
+    const countdownEl = document.getElementById('match-countdown');
+    // Пример: время начала матча — можно заменить на динамическое значение
+    const matchStartTime = new Date('2025-05-10T18:00:00');
+    const updateCountdown = () => {
+        const now = new Date();
+        const diff = matchStartTime - now;
+        if (diff <= 0) {
+            countdownEl.textContent = 'Матч начался';
+            clearInterval(countdownInterval);
+            return;
+        }
+        const hours = Math.floor(diff / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        countdownEl.textContent = `${hours} ч. ${minutes} мин. ${seconds} сек.`;
+    };
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Обработчик формы поиска
+    const searchForm = document.querySelector('form[role="search"]');
+    searchForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const query = searchForm.querySelector('input[name="q"]').value.trim();
+        if (query) {
+            window.location.href = `/search?q=${encodeURIComponent(query)}`;
+        }
+    });
 });
 
 function initCountdown(elementId, targetDateStr) {
