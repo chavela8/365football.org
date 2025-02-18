@@ -189,7 +189,7 @@ body {
 
 /* Ограничение размера логотипа */
 .site-header .logo img {
-  max-width: 150px; /* Задайте нужное значение, например 150px */
+  max-width: 200px; /* Увеличено с 150px до 200px */
   height: auto;
   display: block;
 }
