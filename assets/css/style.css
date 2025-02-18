@@ -64,6 +64,9 @@ body {
 .site-header {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -182,4 +185,16 @@ body {
 
 .scroll-to-top:hover {
   background-color: #004494;
+}
+
+/* Ограничение размера логотипа */
+.site-header .logo img {
+  max-width: 150px; /* Задайте нужное значение, например 150px */
+  height: auto;
+  display: block;
+}
+
+/* Дополнительные стили для выравнивания логотипа в левом верхнем углу */
+.site-header .logo {
+  margin-right: 20px; /* Отступ справа для корректного расположения рядом с другими элементами */
 } 
