@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const CHATGPT_API_URL = 'https://api.openai.com/v1/chat/completions';
-const OPENAI_API_KEY = process.env.VUE_APP_OPENAI_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 export const generateMatchReview = async (matchData) => {
   const prompt = `Составь аналитический обзор матча между ${matchData.homeTeam} и ${matchData.awayTeam}. Матч окончился со счетом ${matchData.score}. Дай краткий анализ ключевых моментов, тактических изменений и результатов.`;
