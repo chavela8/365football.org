@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Игнорирование переменных окружения
+.env
+.env.local
+.env.*.local
