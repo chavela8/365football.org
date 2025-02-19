@@ -6,7 +6,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Инициализация обратного отсчёта для секции "Матч дня"
     // Задайте нужную дату и время в формате ISO (например, 2023-12-31T18:00:00)
-    initCountdown('match-countdown', '2023-12-31T18:00:00');
+    const countdownEl = document.getElementById('match-countdown');
+    if (!countdownEl) {
+        console.error('Элемент "match-countdown" отсутствует на странице.');
+    } else {
+        initCountdown('match-countdown', '2023-12-31T18:00:00');
+    }
 
     // Проверка поддержки Service Worker и его регистрация
     if ('serviceWorker' in navigator) {

@@ -24,7 +24,13 @@
   </script>
   
   <!-- Content Security Policy для повышения безопасности -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://mc.yandex.ru https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data: https://mc.yandex.ru; font-src 'self' https://cdnjs.cloudflare.com;">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://mc.yandex.ru https://www.googletagmanager.com 'sha256-Z0g2aPppiTp1vAS5ffE2uwO3Rjv0QkCr/4Gxy96Ioc4=';
+    connect-src 'self' https://analytics.google.com https://www.googletagmanager.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data:;
+  ">
 </head>
 <body>
   <!-- Header -->
