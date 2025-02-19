@@ -1,0 +1,53 @@
+:root {
+  --background-color: #111;
+  --text-color: #eee;
+  --accent-color: #00aaff;
+}
+
+[data-theme="light"] {
+  --background-color: #fff;
+  --text-color: #111;
+  --accent-color: #007acc;
+}
+
+/* Применяем переменные для основных элементов */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Стили для сообщений об ошибке */
+.error-message {
+  color: #ff5555;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+.error-container {
+  text-align: center;
+  margin: 10px 0;
+}
+.retry-button {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.retry-button:hover {
+  background-color: #0099e6;
+}
+
+/* Стили для сообщений о загрузке */
+.loading-message {
+  text-align: center;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+/* Пример для кнопок и навигационных ссылок */
+.button, .nav-link {
+  color: var(--accent-color);
+} 
